@@ -6,7 +6,7 @@ import { userAC,tableAC } from '../../redux/TableReducer';
 
 class LoginContainer extends React.Component{
     componentDidMount() {
-        const url="http://localhost:3001/data";
+        const url="https://t4-backend.onrender.com/data";
         axios
             .get(url).then(response=>response.data)
             .then((data)=>{this.props.tableAC({data})});}

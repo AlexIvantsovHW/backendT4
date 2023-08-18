@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl='http://localhost:3001/data'
+const baseUrl='https://t4-backend.onrender.com/data'
 
 const updateData=(tableAC)=>{
   const url=baseUrl;
@@ -27,7 +27,7 @@ const API = {
   getForm(fData,values,) {
     axios({
       method: "post",
-      url: "http://localhost:3001/form",
+      url: "https://t4-backend.onrender.com/form",
       data: fData,
       config: { headers: { "Content-Type": "multipart/form-data" } },
     })
@@ -42,30 +42,30 @@ const API = {
   },
   getBlock(isChecked,tableAC) {
     let numbArr=isChecked.map((string)=>parseInt(string))
-    const url="http://localhost:3001/block";
+    const url="https://t4-backend.onrender.com/block";
     userRequest('post','block',url,numbArr,tableAC)
   },
 
   getUnBlock(isChecked,tableAC) {
     let numbArr=isChecked.map((string)=>parseInt(string))
-    const url="http://localhost:3001/active";
+    const url="https://t4-backend.onrender.com/active";
     userRequest('post','unblock',url,numbArr,tableAC)
   },
   getDelete(isChecked,tableAC) {
     let numbArr=isChecked.map((string)=>parseInt(string))
-    const url="http://localhost:3001/delete";
+    const url="https://t4-backend.onrender.com/delete";
     userRequest('post','delete',url,numbArr,tableAC)
   },
   getDelAll(tableAC) {
     const data = "dataTable";
-    const url="http://localhost:3001/allDelete";
+    const url="https://t4-backend.onrender.com/allDelete";
     userRequest('post','deleteAll',url,data,tableAC)
   },
   getLog(fData,tableAC) {
     debugger;
     axios({
       method:'post',
-      url: 'http://localhost:3001/log',
+      url: 'https://t4-backend.onrender.com/log',
       data: fData,
       config: { headers: { "Content-Type": "multipart/form-data" } },
     })
